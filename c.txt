@@ -1,0 +1,416 @@
+bài 1 :
+#include<stdio.h>
+#include<conio.h>
+int main()
+{ 
+    int a[50][50];
+    int i,j,m,n;
+    printf("nhap so hang n="); scanf("%d",&n);
+    printf("nhap so cot m="); scanf("%d",&m);
+    printf("nhap vao ma tran:\n");
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+        	printf("\n a[%d][%d]= ",i,j);
+            scanf("%d",&a[i][j]);
+        }
+    }
+    printf("ma tran vua nhap la:\n");
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+}
+bài 2 : 
+#include <stdio.h> 
+int main() {
+   int n,i,j;
+ 
+   n = 5;   
+ 
+   for(j = 0; j <= 2*n+1; j++)
+         printf("*");
+    printf("\n");
+   for(i = 1; i <= n-1; i++) {
+      for(j = 0; j <= n-i; j++) {
+	  
+         printf("*");
+ 		}
+      for(j = 1; j <= 2*i; j++){
+	  
+	  
+         printf(" ");
+    	}
+        for(j = 0; j <= n-i; j++){
+		
+         printf("*");
+     	}
+      printf("\n");
+   }
+   for(j = 0; j <= 2*n+1; j++)
+         printf("*");
+   return 1;
+}
+bài 1: chương 5 
+#include<stdio.h>
+ 
+int main(){
+    int a1, b1, c1, a2, b2, c2;
+    float D, Dx, Dy, x, y;
+    printf("a1*x + b1*y = c1\n");
+    printf("a2*x + b2*y = cc\n");
+    printf("\nNhap a1: "); scanf("%d", &a1);
+    printf("\nNhap b1: "); scanf("%d", &b1);
+    printf("\nNhap c1: "); scanf("%d", &c1);
+    printf("\nNhap a2: "); scanf("%d", &a2);
+    printf("\nNhap b2: "); scanf("%d", &b2);
+    printf("\nNhap c2: "); scanf("%d", &c2);
+    D = a1 * b2 - a2 * b1;
+    Dx = c1 * b2 - c2 * b1;
+    Dy = a1 * c2 - a2 * c1;
+    if (D == 0) {
+        if (Dx + Dy == 0)
+            printf("He phuong trinh co vo so nghiem");
+        else
+            printf("He phuong trinh vo nghiem");
+    }
+    else {
+        x = Dx / D;
+        y = Dy / D;
+        printf("He phuong trinh co nghiem (x, y) = (%d, %d)", x, y);
+    }
+    return 0;
+}
+bài 2 : chương 5 
+#include <stdio.h> 
+int main() {
+  	int n,a[100];
+  	printf("moi ban nhap phan tu : ");
+  	scanf("%d",&n);
+   	for(int i = 0;i < n; i++){
+        printf("\n a[%d] = ", i);
+        scanf("%d", &a[i]);
+    	}
+  	for(int i = 0;i < n; i++){
+		printf("\n a[%d]=%d",i,a[i]);
+	}
+	int s=0,x=0;
+	for(int i =0 ;i<n;i++){
+		if (a[i]>0) {
+			s=s+a[i];
+		} else {
+			x=x+a[i];
+		}
+	}
+	printf("\n trung binh cong cac so duong  la : %d ",s);
+	printf("\n trung binh cong cac so am la : %d ",x);
+}
+bài 5 : chương 5 
+#include <stdio.h> 
+int main() {
+  	int n,a[100],b[100],c[100],d[100];
+  	printf("moi ban nhap phan tu : ");
+  	scanf("%d",&n);
+   	for(int i = 0;i < n; i++){
+        printf("\n a[%d] = ", i);
+        scanf("%d", &a[i]);
+    	}
+    for(int i = 0;i < n; i++){
+        printf("\n b[%d] = ", i);
+        scanf("%d", &b[i]);
+    }
+    for(int i = 0;i < n; i++){
+        printf("\n c[%d] = ", i);
+        scanf("%d", &c[i]);
+    }
+    for(int i = 0;i < n; i++){
+        printf("\n d[%d] = ", i);
+        scanf("%d", &d[i]);
+    }
+    printf("\n day thu nhat la \n");
+  	for(int i = 0;i < n; i++){
+		printf("\t a[%d]=%d",i,a[i]);
+	}
+	 printf("\n day thu hai la \n");
+	for(int i = 0;i < n; i++){
+		printf("\t b[%d]=%d",i,b[i]);
+	}
+	 printf("\n day thu ba la \n");
+	for(int i = 0;i < n; i++){
+		printf("\t c[%d]=%d",i,c[i]);
+	}
+	 printf("\n day thu tu la \n");
+	for(int i = 0;i < n; i++){
+		printf("\t d[%d]=%d",i,d[i]);
+	}
+	int max1=a[0],max2=b[0],max3=c[0],max4=d[0],min1=a[0],min2=b[0],min3=c[0],min4=d[0];
+	for (int i = 0 ;i<n;i++){
+		if (a[i]>max1){
+			max1 = a[i] ;
+			
+		} 
+	}
+	for (int i = 0 ;i<n;i++){
+		if (a[i]<min1){
+			min1 = a[i] ;
+			
+		} 
+	}
+	for (int i = 0 ;i<n;i++){
+		if (b[i]>max2){
+			max2 = b[i] ;
+			
+		}
+	}
+	for (int i = 0 ;i<n;i++){
+		if (b[i]<min2){
+			min2 = b[i] ;
+			
+		} 
+	}
+	for (int i = 0 ;i<n;i++){
+		if (c[i]>max3){
+			max3 = c[i] ;
+			
+		} 
+	}
+	for (int i = 0 ;i<n;i++){
+		if (c[i]<min3){
+			min3 = c[i] ;
+			
+		} 
+	}
+	for (int i = 0 ;i<n;i++){
+		if (d[i]>max4){
+			max4 = d[i] ;	
+		} 
+	}
+	for (int i = 0 ;i<n;i++){
+		if (d[i]<min4){
+			min4 = d[i] ;	
+		} 
+	}
+	int Max=max1,Max1=max3;
+	if (max1<max2){
+		Max=max2;
+	}
+	if(max3<max4){
+		Max1=max4;
+	}
+	int MAX=Max;
+	if(Max<Max1){
+		MAX=Max1;
+	}
+	int Min=min1,Min1=min3;
+	if (min1>min2){
+		Min=min2;
+	}
+	if(min3>min4){
+		Min1=min4;
+	}
+	int MIN=Min;
+	if(Min>Min1){
+		MIN=Min1;
+	}
+	printf("\n Max trong 4 dãy so la % d ",MAX);
+	printf("\n Min trong 4 day so la %d ",MIN);
+}
+bài 11 chương 5 : 
+#include <stdio.h>
+int main(){
+	for(int i = 0 ;i<=500;i++){
+		for(int j =0;j<=500;j++){
+			for(int k =0 ;k<=500;k++){
+				if(i*1000+j*2000+k*5000 == 200000){
+					printf("\n so to 1000 la %d ,so to 2000 la %d, so to 5000 la %d",i,j,k);
+				}
+			}
+		}
+	}
+}
+bài 1 chương 6 : 
+#include<stdio.h>
+ 
+int main(){
+    int a1, b1, c1, a2, b2, c2;
+    float D, Dx, Dy, x, y;
+    printf("a1*x + b1*y = c1\n");
+    printf("a2*x + b2*y = cc\n");
+    printf("\nNhap a1: "); scanf("%d", &a1);
+    printf("\nNhap b1: "); scanf("%d", &b1);
+    printf("\nNhap c1: "); scanf("%d", &c1);
+    printf("\nNhap a2: "); scanf("%d", &a2);
+    printf("\nNhap b2: "); scanf("%d", &b2);
+    printf("\nNhap c2: "); scanf("%d", &c2);
+    D = a1 * b2 - a2 * b1;
+    Dx = c1 * b2 - c2 * b1;
+    Dy = a1 * c2 - a2 * c1;
+    if (D == 0) {
+        if (Dx + Dy == 0)
+            printf("He phuong trinh co vo so nghiem");
+        else
+            printf("He phuong trinh vo nghiem");
+    }
+    else {
+        x = Dx / D;
+        y = Dy / D;
+        printf("He phuong trinh co nghiem (x, y) = (%d, %d)", x, y);
+    }
+    return 0;
+}
+bài 6 chương 6 : 
+#include<stdio.h>
+#include<conio.h>
+int a[50][50],b[50];
+float x[50];
+int n;
+void nhap()
+ {
+	int i,j;
+	printf("Nhap n= ");
+	scanf("%d",&n);
+	for (i=0;i<n;i++)
+	 {
+		for (j=0;j<n;j++)
+		 {
+			printf("a[%d][%d]= ",i+1,j+1);
+			scanf("%d",&a[i][j]);
+		 }
+		printf("b[%d]= ",i+1);
+		scanf("%d",&b[i]);
+
+	 }
+ }
+void xuat()
+ {
+	int i;
+	for (i=0;i<n;i++)
+	 printf("\nX[%d]= %8.2f ",i+1,x[i]);
+ }
+void main()
+ {
+	int i,j,k,i1,i2;
+	nhap();
+	for (i1=1;i1<n;i1++)
+	 for (i2=i1;i2<n;i2++)
+	  while (a[i2][i1-1]!=0)
+	   {
+		 if (a[i2][i1-1]>=a[i1-1][i1-1])
+		  {
+			for (j=i1-1;j<n;j++) a[i2][j]= a[i2][j] - a[i1-1][j];
+			b[i2]-=b[i1-1];
+		  }
+		 else
+		  {
+			for (j=i1-1;j<n;j++) a[i1-1][j]= a[i1-1][j] - a[i2][j];
+			b[i1-1]-=b[i2];
+		  }
+	   }
+	   for (i=0;i<n;i++)
+	 {
+		for(j=0;j<n;j++)
+		 printf("%8d ",a[i][j]);
+		printf("%8d\n",b[i]);
+	 }
+	x[n-1]= (float)b[n-1]/a[n-1][n-1];
+	for (i=n-2;i>=0;i--)
+	 {
+		for (j=i+1;j<n;j++)
+		 b[i]-= x[j]*a[i][j];
+		x[i]= (float)b[i]/a[i][i];
+	 }
+	xuat();
+ }
+bài 1 chương 7 :
+#include<stdio.h>
+#include<string.h>
+
+
+
+typedef struct {
+	char ho [10];
+	char ten [10];
+	char tendem [10];	
+} ten;
+typedef struct {
+	char xa[20];
+	char huyen [20];
+	char tinh[20];	
+} que;
+typedef struct {
+	float toan;
+	float ly;
+	float hoa;
+} diem;
+
+typedef struct  {
+	char truong[20];
+	int tuoi;
+	int sobaodanh;
+	ten hoten;
+	que quequan;
+	diem diemthi;
+} phieudiem;
+
+
+void nhap(phieudiem &phieudiem) {
+	printf("nhap ten truong: ");
+	gets(phieudiem.truong);
+	printf("Nhap ho: ");
+	gets(phieudiem.hoten.ho);
+	printf("Nhap ten dem: ");
+	gets(phieudiem.hoten.tendem);
+	printf("Nhap ten: ");
+	gets(phieudiem.hoten.ten);
+	printf("nhap tuoi: ");
+	scanf("%d", &phieudiem.tuoi);
+	printf("nhap so bao danh: ");
+	scanf("%d", &phieudiem.sobaodanh);
+	fflush(stdin);
+	printf("Nhap xa: ");
+	gets(phieudiem.quequan.xa);
+	printf("Nhap huyen: ");
+	gets(phieudiem.quequan.huyen);
+	printf("Nhap tinh: ");
+	gets(phieudiem.quequan.tinh);
+	printf("Nhap diem toan: ");
+	scanf("%f", &phieudiem.diemthi.toan);
+	printf("Nhap diem ly: ");
+	scanf("%f", &phieudiem.diemthi.ly);
+	printf("Nhap diem hoa: ");
+	scanf("%f", &phieudiem.diemthi.hoa);
+}
+void in(phieudiem &phieudiem) {
+	printf("----------KET QUA----------\n");
+	char hovaten[50];
+	sprintf(hovaten, "%s %s %s", phieudiem.hoten.ho, phieudiem.hoten.tendem, phieudiem.hoten.ten);
+	printf("Ho va ten: %s\n", hovaten);
+	char noisinh[100];
+	sprintf(noisinh, "%s - %s - %s", phieudiem.quequan.xa, phieudiem.quequan.huyen, phieudiem.quequan.tinh);
+	printf("Que quan: %s\n", noisinh);
+	printf("Ten truong: %s\n", phieudiem.truong);
+	printf("Tuoi: %d\n", phieudiem.tuoi);
+	printf("So bao danh: %d\n", phieudiem.sobaodanh);
+//	float diem;
+//	sprintf(diem, "diem toan: %f - diem ly: %f - diem hoa: %f", phieudiem.diemthi.toan, phieudiem.diemthi.ly, phieudiem.diemthi.hoa);
+	printf("diem toan: %.2f - diem ly: %.2f - diem hoa: %.2f", phieudiem.diemthi.toan, phieudiem.diemthi.ly, phieudiem.diemthi.hoa);
+}
+int main() {
+	phieudiem phieudiem;
+	nhap(phieudiem);
+//	char hovaten[50];
+//	sprintf(hovaten, "%s %s %s", phieudiem.hoten.ho, phieudiem.hoten.tendem, phieudiem.hoten.ten);
+//	printf("%s", hovaten);
+//	strcpy(hovaten, phieudiem.hoten.ho);
+//	strcat(hovaten, phieudiem.hoten.tendem);
+//	strcat(hovaten, phieudiem.hoten.ten);
+//	printf("%s", phieudiem.hoten);
+//	printf("%s", pd.hoten.ten);
+	in(phieudiem);
+	return 0;
+}	
